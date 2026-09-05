@@ -119,5 +119,5 @@ jupyter notebook
 
 Aspiring Data Analyst passionate about transforming raw data into meaningful insights and supporting data-driven decision-making.
 
-🔗 LinkedIn: Add your LinkedIn profile link
-🔗 GitHub: Add your GitHub profile link
+🔗 LinkedIn: https://www.linkedin.com/in/muhammadsamadqureshi/
+🔗 GitHub: https://www.github.coom/mmdsamadqureshi
