@@ -1,22 +1,52 @@
-# 🚗 Car Market Trend Analysis
+# 🚗 Car Market Trends Analysis
 
 ## 📌 Project Overview
 
-The automobile industry generates large volumes of data related to vehicle pricing, brands, fuel types, transmission, ownership, and market preferences. This project focuses on analyzing car market data to identify meaningful trends and patterns that can support data-driven decision-making.
+This project performs an Exploratory Data Analysis (EDA) on used car data from CarDekho to identify market trends and understand the key factors influencing vehicle selling prices.
 
-The objective of this analysis is to explore the factors influencing car prices and understand consumer preferences across different vehicle categories.
+The analysis explores how variables such as present price, fuel type, transmission, seller type, vehicle age, and kilometers driven relate to the resale value of cars.
 
 ---
 
 ## 🎯 Objectives
 
-* Analyze overall trends in the car market.
-* Identify factors influencing car prices.
-* Compare pricing across different car brands.
-* Analyze the impact of fuel type and transmission on vehicle prices.
-* Explore relationships between vehicle age, mileage, and selling price.
-* Identify popular vehicle categories and market patterns.
-* Generate actionable insights through data visualization.
+The key objectives of this project are:
+
+* Analyze the distribution of cars based on fuel type.
+* Understand the distribution of car selling prices.
+* Compare average selling prices across different fuel types.
+* Analyze the impact of transmission type on selling price.
+* Compare selling prices between dealer and individual sellers.
+* Examine the relationship between present price and selling price.
+* Analyze the impact of vehicle age on resale value.
+* Explore the relationship between kilometers driven and selling price.
+* Identify the most common cars in the dataset.
+* Understand correlations between numerical variables.
+
+---
+
+## 📂 Dataset
+
+The dataset contains information about used cars, including:
+
+| Feature       | Description               |
+| ------------- | ------------------------- |
+| Car_Name      | Name of the car           |
+| Year          | Manufacturing year        |
+| Selling_Price | Selling price of the car  |
+| Present_Price | Current market price      |
+| Kms_Driven    | Total kilometers driven   |
+| Fuel_Type     | Type of fuel used         |
+| Seller_Type   | Dealer or Individual      |
+| Transmission  | Manual or Automatic       |
+| Owner         | Number of previous owners |
+
+### Dataset Summary
+
+* Original Records: **301**
+* Columns: **9**
+* Duplicate Records Identified: **2**
+* Duplicates Removed Before Analysis
 
 ---
 
@@ -31,51 +61,111 @@ The objective of this analysis is to explore the factors influencing car prices 
 
 ---
 
-## 📊 Key Analysis Performed
+## 🔍 Analysis Performed
 
-The project includes the following analysis:
+### 1. Data Cleaning
 
-* Data Cleaning and Preprocessing
-* Exploratory Data Analysis (EDA)
-* Missing Value Analysis
-* Price Distribution Analysis
-* Brand-wise Market Analysis
-* Fuel Type Analysis
-* Transmission Type Analysis
-* Vehicle Age vs Price Analysis
-* Mileage vs Selling Price Analysis
-* Correlation Analysis
-* Data Visualization
+* Checked dataset structure and data types.
+* Identified missing values.
+* Checked for duplicate records.
+* Removed duplicate rows before performing analysis.
 
----
+### 2. Exploratory Data Analysis
 
-## 📈 Key Insights
+The following analyses were performed:
 
-Some of the insights derived from the analysis include:
+* Fuel Type Distribution
+* Selling Price Distribution
+* Average Selling Price by Fuel Type
+* Average Selling Price by Transmission
+* Average Present Price by Transmission
+* Average Selling Price by Seller Type
+* Present Price vs Selling Price
+* Manufacturing Year vs Selling Price
+* Car Age vs Selling Price
+* Kilometers Driven vs Selling Price
+* Top 10 Most Common Cars
+* Correlation Heatmap
 
-* Vehicle brand plays a significant role in determining market price.
-* Newer vehicles generally have higher selling prices compared to older vehicles.
-* Fuel type and transmission influence consumer preferences and vehicle valuation.
-* Mileage and vehicle age show an important relationship with resale value.
-* Certain brands dominate the market in terms of vehicle availability and pricing.
+### 3. Feature Engineering
 
----
-
-## 📂 Project Structure
+A new feature, **Car_Age**, was created using:
 
 ```text
-Car-Market-Trend-Analysis
+Car_Age = 2026 - Year
+```
+
+This feature was used to analyze the relationship between vehicle age and selling price.
+
+---
+
+## 📊 Key Insights
+
+### 🚘 Fuel Type
+
+The dataset is dominated by **Petrol vehicles**, followed by Diesel cars, while CNG vehicles represent only a small portion of the dataset.
+
+### 💰 Selling Price Distribution
+
+Most cars fall within the lower-to-mid price range. A small number of expensive vehicles create a **right-skewed distribution**.
+
+### ⛽ Fuel Type vs Selling Price
+
+Diesel cars have the highest average selling price in this dataset.
+
+### ⚙️ Transmission
+
+Automatic cars generally have significantly higher selling prices compared to manual cars.
+
+Automatic cars also have a higher average present price, which contributes to their higher resale values.
+
+### 🏢 Seller Type
+
+Cars listed by dealers tend to have higher average selling prices compared to cars sold by individual sellers.
+
+### 📈 Present Price vs Selling Price
+
+Present Price has a strong positive correlation of approximately **0.876** with Selling Price.
+
+This indicates that cars with higher current market prices generally have higher resale values.
+
+### 📅 Vehicle Age
+
+Older cars generally tend to have lower selling prices, demonstrating the impact of depreciation on resale value.
+
+### 🛣️ Kilometers Driven
+
+Cars with higher mileage generally tend to have lower resale values, although mileage alone is not as strong a predictor as Present Price.
+
+---
+
+## 📈 Key Visualizations
+
+The project includes visualizations such as:
+
+* Bar Charts
+* Count Plots
+* Histograms
+* Scatter Plots
+* Correlation Heatmap
+
+These visualizations help identify patterns and relationships within the used car market.
+
+---
+
+## 📁 Project Structure
+
+```text
+car-market-trends-analysis/
 │
-├── data
-│   └── car_data.csv
+├── data/
+│   └── car_dekho_data.csv
 │
-├── notebooks
-│   └── Car_Market_Trend_Analysis.ipynb
-│
-├── images
-│   └── visualizations
+├── notebooks/
+│   └── Car_Market_Trends_Analysis_EDA.ipynb
 │
 ├── README.md
+│
 └── requirements.txt
 ```
 
@@ -83,33 +173,44 @@ Car-Market-Trend-Analysis
 
 ## 🚀 How to Run the Project
 
-1. Clone the repository.
-
-2. Install the required libraries:
+### 1. Clone the repository
 
 ```bash
-pip install pandas numpy matplotlib seaborn
+git clone https://github.com/your-username/car-market-trends-analysis.git
 ```
 
-3. Open the Jupyter Notebook:
+### 2. Navigate to the project directory
+
+```bash
+cd car-market-trends-analysis
+```
+
+### 3. Install required libraries
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-4. Run the analysis notebook.
+Open the notebook and run the cells to reproduce the analysis.
 
 ---
 
-## 📊 Skills Demonstrated
+## 📚 Skills Demonstrated
 
 * Data Cleaning
-* Exploratory Data Analysis
+* Data Exploration
+* Exploratory Data Analysis (EDA)
+* Feature Engineering
 * Data Visualization
-* Statistical Analysis
+* Correlation Analysis
 * Business Insight Generation
 * Python Programming
-* Problem Solving
 
 ---
 
@@ -117,7 +218,9 @@ jupyter notebook
 
 **Muhammad Samad Qureshi**
 
-Aspiring Data Analyst passionate about transforming raw data into meaningful insights and supporting data-driven decision-making.
+Aspiring Data Analyst focused on transforming raw data into meaningful insights and supporting data-driven decision-making.
 
-🔗 LinkedIn: https://www.linkedin.com/in/muhammadsamadqureshi/
-🔗 GitHub: https://www.github.coom/mmdsamadqureshi
+### Connect with me
+
+* LinkedIn: Add your LinkedIn profile
+* GitHub: Add your GitHub profile
